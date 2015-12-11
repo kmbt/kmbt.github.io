@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>kmbt on code, universe and everything</title>
+  <title>BuiltWith lookup script</title>
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
@@ -24,6 +24,8 @@
   <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
+    <meta name="description" content="`BuiltWith &lt;http://builtwith.com&gt;`_ is a web servi..." />
+    <meta name="keywords" content="builtwith, python, lxml, web scraping" />
 </head>
 <body>
   <header>
@@ -54,57 +56,6 @@
         <article>
     <header>
         <h1>
-            <a href="/2015/htdebug-a-script-for-tracing-http-redirects/" rel="bookmark canonical">htdebug, a script for tracing HTTP redirects</a>
-        </h1>
-        <time datetime="2015-12-11">2015-12-11</time>
-    </header>
-    <p>Recently, I have written a simple Python script that helps trace HTTP redirects
-along with in&shy;for&shy;ma&shy;tion on rel=canonical links. I called it htdebug.</p>
-<p>Here it is:</p>
-<div class="highlight"><pre><span class="err">#!/usr/bin/env python</span>
-
-<span class="err">import urllib</span>
-<span class="err">import urllib2</span>
-<span class="err">import sys</span>
-<span class="err">import requests</span>
-
-<span class="err">import lxml</span>
-<span class="err">from lxml import etree</span>
-<span class="err">from cStringIO import StringIO</span>
-
-<span class="err">def get_canonical(html_content):</span>
-<span class="err">    parser = etree.HTMLParser()</span>
-<span class="err">    tree = etree.parse(StringIO(html_content), parser)</span>
-<span class="err">    canonical_hrefs = tree.xpath(&quot;/html/head/link[@rel=&#39;canonical&#39;]/@href&quot;)</span>
-<span class="err">    return canonical_hrefs</span>
-
-<span class="err">if __name__ == &quot;__main__&quot;:</span>
-<span class="err">    url = sys.argv[1]</span>
-<span class="err">    print &quot;Probing {} for redirect path.&quot;.format(url)</span>
-<span class="err">    response = requests.get(url)</span>
-<span class="err">    for resp in response.history+[response]:</span>
-<span class="err">        print</span>
-<span class="err"> </span></pre><span>&#8230;<a href="/2015/htdebug-a-script-for-tracing-http-redirects/" class="continue">continue</a>.</span></div>
-    <footer>
-        
-        
-            <p class="tags">tagged as
-                <a href="/tag/htdebug/" rel="tag">htdebug</a>,
-                <a href="/tag/python/" rel="tag">python</a>,
-                <a href="/tag/http-redirects/" rel="tag">http redirects</a>
-                    and
-                    
-                <a href="/tag/lxml/" rel="tag">lxml</a>
-                
-            </p>
-        
-    </footer>
-    <div class="comments"></div>
-</article>
-    
-        <article>
-    <header>
-        <h1>
             <a href="/2015/builtwith-lookup-script/" rel="bookmark canonical">BuiltWith lookup script</a>
         </h1>
         <time datetime="2015-12-11">2015-12-11</time>
@@ -127,7 +78,37 @@ along with in&shy;for&shy;ma&shy;tion on rel=canonical links. I called it htdebu
 <span class="err">        print &quot;Visiting {} ...\n&quot;.format(url)</span>
 <span class="err">        response = requests.get(url)</span>
 
-<span class="err">      </span></pre><span>&#8230;<a href="/2015/builtwith-lookup-script/" class="continue">continue</a>.</span></div>
+<span class="err">        parser = etree.HTMLParser()</span>
+<span class="err">        tree = etree.parse(StringIO(response.content), parser)</span>
+
+<span class="err">        tech_items = tree.xpath(&quot;//div[contains(@class, &#39;techItem&#39;)]//h3&quot;)</span>
+<span class="err">        for item in tech_items:</span>
+<span class="err">                print &quot;&quot;.join(item.itertext()).strip()</span>
+</pre></div>
+<p>After placing it in a executable file named builtwith in your $PATH, you can
+use it like so:</p>
+<div class="highlight"><pre><span class="err">$ builtwith 37signals.com</span>
+<span class="err">Visiting http://builtwith.com/37signals.com ...</span>
+
+<span class="err">GeoTrust SSL</span>
+<span class="err">RapidSSL</span>
+<span class="err">Dyn DNS</span>
+<span class="err">Google Apps for Business</span>
+<span class="err">Postmark</span>
+<span class="err">Campaign Monitor</span>
+<span class="err">DKIM</span>
+<span class="err">SPF</span>
+<span class="err">Shockwave Flash Embed</span>
+<span class="err">Google Conversion Tracking</span>
+<span class="err">Clicky</span>
+<span class="err">html5shiv</span>
+<span class="err">Prototype</span>
+<span class="err">YouTube</span>
+<span class="err">Amazon S3</span>
+<span class="err">IPhone / Mobile Compatible</span>
+<span class="err">Device Width</span>
+</pre></div>
+
     <footer>
         
         
@@ -146,7 +127,14 @@ along with in&shy;for&shy;ma&shy;tion on rel=canonical links. I called it htdebu
 </article>
     
     
+        <a href="/2015/hydrogen-renamer//" class="page floatright">
+        Hydrogen Renamer &raquo;
+        </a>
     
+    
+        <a href="/2015/htdebug-a-script-for-tracing-http-redirects//" class="page floatleft">
+        &laquo; htdebug, a script for tracing HTTP redirects
+        </a>
 </div>
 
 </body>

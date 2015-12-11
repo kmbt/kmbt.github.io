@@ -59,6 +59,62 @@ use it like so:&lt;/p&gt;
     </item>
         
             <item>
+        <title>BuiltWith lookup script</title>
+        <link>http://kmbt.github.io/2015/builtwith-lookup-script/</link>
+        <description>&lt;p&gt;&lt;a class=&#34;reference external&#34; href=&#34;http://builtwith.com&#34;&gt;BuiltWith&lt;/a&gt; is a web service that lets you check what web technologies are used on a given website. This simple script lets you do that directly from command line.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;#!/usr/bin/env python&lt;/span&gt;
+
+&lt;span class=&#34;err&#34;&gt;import urlparse&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;import sys&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;import requests&lt;/span&gt;
+
+&lt;span class=&#34;err&#34;&gt;import lxml&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;from lxml import etree&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;from cStringIO import StringIO&lt;/span&gt;
+
+&lt;span class=&#34;err&#34;&gt;if __name__ == &amp;quot;__main__&amp;quot;:&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;        domain = sys.argv[1]&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;        base_url = &amp;quot;http://builtwith.com/&amp;quot;&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;        url = urlparse.urljoin(base_url, domain)&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;        print &amp;quot;Visiting {} ...\n&amp;quot;.format(url)&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;        response = requests.get(url)&lt;/span&gt;
+
+&lt;span class=&#34;err&#34;&gt;        parser = etree.HTMLParser()&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;        tree = etree.parse(StringIO(response.content), parser)&lt;/span&gt;
+
+&lt;span class=&#34;err&#34;&gt;        tech_items = tree.xpath(&amp;quot;//div[contains(@class, &amp;#39;techItem&amp;#39;)]//h3&amp;quot;)&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;        for item in tech_items:&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;                print &amp;quot;&amp;quot;.join(item.itertext()).strip()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;After placing it in a executable file named builtwith in your $PATH, you can
+use it like so:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;$ builtwith 37signals.com&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;Visiting http://builtwith.com/37signals.com ...&lt;/span&gt;
+
+&lt;span class=&#34;err&#34;&gt;GeoTrust SSL&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;RapidSSL&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;Dyn DNS&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;Google Apps for Business&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;Postmark&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;Campaign Monitor&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;DKIM&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;SPF&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;Shockwave Flash Embed&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;Google Conversion Tracking&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;Clicky&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;html5shiv&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;Prototype&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;YouTube&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;Amazon S3&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;IPhone / Mobile Compatible&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;Device Width&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+</description>
+        <pubDate>Thu, 10 Dec 2015 23:00:00 GMT</pubDate>
+        <guid isPermaLink="false">tag:kmbt.github.io,2015-12-11:/2015/builtwith-lookup-script</guid>
+    </item>
+        
+            <item>
         <title>Hydrogen Renamer</title>
         <link>http://kmbt.github.io/2015/hydrogen-renamer/</link>
         <description>&lt;p&gt;TL;DR: This &lt;a href=&#34;https://github.com/kmbt/hydrogen-renamer&#34;&gt;script&lt;/a&gt; will help you rename the Gantry 5 Hydrogen theme as a starting point for further customizations.&lt;/p&gt;

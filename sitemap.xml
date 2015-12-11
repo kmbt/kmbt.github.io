@@ -6,6 +6,12 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
+    <loc>http://kmbt.github.io/2015/builtwith-lookup-script/</loc>
+    <lastmod>2015-12-11</lastmod>
+    <changefreq>never</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
     <loc>http://kmbt.github.io/tag/http-redirects/</loc>
     <lastmod>2015-12-11</lastmod>
     <changefreq>weekly</changefreq>
@@ -27,10 +33,20 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>http://kmbt.github.io/tag/builtwith/</loc>
+    <lastmod>2015-12-11</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>http://kmbt.github.io/2015/htdebug-a-script-for-tracing-http-redirects/</loc>
     <lastmod>2015-12-11</lastmod>
     <changefreq>never</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>http://kmbt.github.io/tag/web-scraping/</loc>
+    <lastmod>2015-12-11</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>http://kmbt.github.io/</loc>

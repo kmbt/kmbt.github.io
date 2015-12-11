@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>kmbt on code, universe and everything – Artikelübersicht</title>
+  <title>kmbt on code, universe and everything</title>
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
@@ -50,51 +50,52 @@
     </nav>
   </header>
   <div class="container">
-<article>
-    <table id="arc">
     
-        
-            <tr>
-            
-                <th>2015 December</th>
-            
-            <td></td>
-            </tr>
+        <article>
+    <header>
+        <h1>
+            <a href="/2015/builtwith-lookup-script/" rel="bookmark canonical">BuiltWith lookup script</a>
+        </h1>
+        <time datetime="2015-12-11">2015-12-11</time>
+    </header>
+    <p><a class="reference external" href="http://builtwith.com">BuiltWith</a> is a web service that lets you check what web tech&shy;nolo&shy;gies are used on a given website. This simple script lets you do that directly from command line.</p>
+<div class="highlight"><pre><span class="err">#!/usr/bin/env python</span>
 
-            
-                <tr>
-                    <th>11</th>
-                    <td><a href="/2015/htdebug-a-script-for-tracing-http-redirects/">htdebug, a script for tracing HTTP redirects</a></td>
-                </tr>
-            
-                <tr>
-                    <th>11</th>
-                    <td><a href="/2015/builtwith-lookup-script/">BuiltWith lookup script</a></td>
-                </tr>
-            
-        
-            <tr>
-            
-                <th>November</th>
-            
-            <td></td>
-            </tr>
+<span class="err">import urlparse</span>
+<span class="err">import sys</span>
+<span class="err">import requests</span>
 
-            
-                <tr>
-                    <th>22</th>
-                    <td><a href="/2015/hydrogen-renamer/">Hydrogen Renamer</a></td>
-                </tr>
-            
-                <tr>
-                    <th>21</th>
-                    <td><a href="/2015/hello-world/">Hello World!</a></td>
-                </tr>
-            
+<span class="err">import lxml</span>
+<span class="err">from lxml import etree</span>
+<span class="err">from cStringIO import StringIO</span>
+
+<span class="err">if __name__ == &quot;__main__&quot;:</span>
+<span class="err">        domain = sys.argv[1]</span>
+<span class="err">        base_url = &quot;http://builtwith.com/&quot;</span>
+<span class="err">        url = urlparse.urljoin(base_url, domain)</span>
+<span class="err">        print &quot;Visiting {} ...\n&quot;.format(url)</span>
+<span class="err">        response = requests.get(url)</span>
+
+<span class="err">      </span></pre><span>&#8230;<a href="/2015/builtwith-lookup-script/" class="continue">continue</a>.</span></div>
+    <footer>
         
-    
-    </table>
+        
+            <p class="tags">tagged as
+                <a href="/tag/builtwith/" rel="tag">builtwith</a>,
+                <a href="/tag/python/" rel="tag">python</a>,
+                <a href="/tag/lxml/" rel="tag">lxml</a>
+                    and
+                    
+                <a href="/tag/web-scraping/" rel="tag">web scraping</a>
+                
+            </p>
+        
+    </footer>
+    <div class="comments"></div>
 </article>
+    
+    
+    
 </div>
 
 </body>

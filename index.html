@@ -105,6 +105,49 @@ along with in&shy;for&shy;ma&shy;tion on rel=canonical links. I called it htdebu
         <article>
     <header>
         <h1>
+            <a href="/2015/builtwith-lookup-script/" rel="bookmark canonical">BuiltWith lookup script</a>
+        </h1>
+        <time datetime="2015-12-11">2015-12-11</time>
+    </header>
+    <p><a class="reference external" href="http://builtwith.com">BuiltWith</a> is a web service that lets you check what web tech&shy;nolo&shy;gies are used on a given website. This simple script lets you do that directly from command line.</p>
+<div class="highlight"><pre><span class="err">#!/usr/bin/env python</span>
+
+<span class="err">import urlparse</span>
+<span class="err">import sys</span>
+<span class="err">import requests</span>
+
+<span class="err">import lxml</span>
+<span class="err">from lxml import etree</span>
+<span class="err">from cStringIO import StringIO</span>
+
+<span class="err">if __name__ == &quot;__main__&quot;:</span>
+<span class="err">        domain = sys.argv[1]</span>
+<span class="err">        base_url = &quot;http://builtwith.com/&quot;</span>
+<span class="err">        url = urlparse.urljoin(base_url, domain)</span>
+<span class="err">        print &quot;Visiting {} ...\n&quot;.format(url)</span>
+<span class="err">        response = requests.get(url)</span>
+
+<span class="err">      </span></pre><span>&#8230;<a href="/2015/builtwith-lookup-script/" class="continue">continue</a>.</span></div>
+    <footer>
+        
+        
+            <p class="tags">tagged as
+                <a href="/tag/builtwith/" rel="tag">builtwith</a>,
+                <a href="/tag/python/" rel="tag">python</a>,
+                <a href="/tag/lxml/" rel="tag">lxml</a>
+                    and
+                    
+                <a href="/tag/web-scraping/" rel="tag">web scraping</a>
+                
+            </p>
+        
+    </footer>
+    <div class="comments"></div>
+</article>
+    
+        <article>
+    <header>
+        <h1>
             <a href="/2015/hydrogen-renamer/" rel="bookmark canonical">Hydrogen Renamer</a>
         </h1>
         <time datetime="2015-11-22">2015-11-22</time>
