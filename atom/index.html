@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <author>
+        <name>kmbt</name>
+        <uri>http://kmbt.github.io/</uri>
+        <email>mail@example.com</email>
+    </author>
+    <title>kmbt on code, universe and everything</title>
+    <id>tag:kmbt.github.io,2011-06-11:/atom/</id>
+    <link rel="alternate" type="text/html" href="http://kmbt.github.io/" />
+    <link rel="self" type="application/atom+xml" href="http://kmbt.github.io/atom/" />
+    <icon>http://kmbt.github.io/favicon.ico</icon>
+    <logo>http://kmbt.github.io/feed-logo.png</logo>
+    <updated>2015-12-10T23:00:00Z</updated>
+    <generator uri="https://github.com/posativ/acrylamid/" version="0.7.10">acrylamid</generator>
+        <entry>
+        <title>htdebug, a script for tracing HTTP redirects</title>
+        <link rel="alternate" type="text/html" href="http://kmbt.github.io/2015/htdebug-a-script-for-tracing-http-redirects/" />
+        <id>tag:kmbt.github.io,2015-12-11:/2015/htdebug-a-script-for-tracing-http-redirects</id>
+        <updated>2015-12-10T23:00:00Z</updated>
+        <category term="htdebug" />
+        <category term="python" />
+        <category term="http redirects" />
+        <category term="lxml" />
+        
+        <author>
+            <name>kmbt</name>
+            <uri>http://kmbt.github.io/</uri>
+            <email>mail@example.com</email>
+        </author>
+        <content type="html">&lt;p&gt;Recently, I have written a simple Python script that helps trace HTTP redirects
+along with information on rel=canonical links. I called it htdebug.&lt;/p&gt;
+&lt;p&gt;Here it is:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;#!/usr/bin/env python&lt;/span&gt;
+
+&lt;span class=&#34;err&#34;&gt;import urllib&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;import urllib2&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;import sys&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;import requests&lt;/span&gt;
+
+&lt;span class=&#34;err&#34;&gt;import lxml&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;from lxml import etree&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;from cStringIO import StringIO&lt;/span&gt;
+
+&lt;span class=&#34;err&#34;&gt;def get_canonical(html_content):&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;    parser = etree.HTMLParser()&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;    tree = etree.parse(StringIO(html_content), parser)&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;    canonical_hrefs = tree.xpath(&amp;quot;/html/head/link[@rel=&amp;#39;canonical&amp;#39;]/@href&amp;quot;)&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;    return canonical_hrefs&lt;/span&gt;
+
+&lt;span class=&#34;err&#34;&gt;if __name__ == &amp;quot;__main__&amp;quot;:&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;    url = sys.argv[1]&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;    print &amp;quot;Probing {} for redirect path.&amp;quot;.format(url)&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;    response = requests.get(url)&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;    for resp in response.history+[response]:&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;        print&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;        print &amp;quot;[{}] {}&amp;quot;.format(resp.status_code, resp.url)&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;        print &amp;quot;canonical link: {}&amp;quot;.format(get_canonical(resp.content))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;After placing it in a executable file named htdebug in your $PATH, you can
+use it like so:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;$ htdebug http://yahoo.com&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;Probing http://yahoo.com for redirect path.&lt;/span&gt;
+
+&lt;span class=&#34;err&#34;&gt;[301] http://yahoo.com/&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;canonical link: []&lt;/span&gt;
+
+&lt;span class=&#34;err&#34;&gt;[200] https://www.yahoo.com/&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;canonical link: [&amp;#39;https://www.yahoo.com/&amp;#39;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;HTTP status codes are shown in square brackets.&lt;/p&gt;
+</content>
+    </entry>
+    
+        <entry>
+        <title>Hydrogen Renamer</title>
+        <link rel="alternate" type="text/html" href="http://kmbt.github.io/2015/hydrogen-renamer/" />
+        <id>tag:kmbt.github.io,2015-11-22:/2015/hydrogen-renamer</id>
+        <updated>2015-11-21T23:00:00Z</updated>
+        <category term="gantry" />
+        <category term="wordpress" />
+        <category term="php" />
+        
+        <author>
+            <name>kmbt</name>
+            <uri>http://kmbt.github.io/</uri>
+            <email>mail@example.com</email>
+        </author>
+        <content type="html">&lt;p&gt;TL;DR: This &lt;a href=&#34;https://github.com/kmbt/hydrogen-renamer&#34;&gt;script&lt;/a&gt; will help you rename the Gantry 5 Hydrogen theme as a starting point for further customizations.&lt;/p&gt;
+&lt;p&gt;Recently, I&#39;ve been trying out the &lt;a href=&#34;http://gantry.org&#34;&gt;Gantry 5&lt;/a&gt; - a theme framework for Wordpress. One way to get started with theme development using Gantry 5 is to take the default theme, called Hydrogen, rename it and customize it to one&#39;s needs.&lt;/p&gt;
+&lt;p&gt;The whole renaming process is described &lt;a href=&#34;http://docs.gantry.org/gantry5/theme-development/change-theme-name&#34;&gt;here&lt;/a&gt;. It takes few steps, which involve unzipping the theme, changing names of files and directories and doing a &lt;em&gt;find and replace&lt;/em&gt; for the word &#34;hydrogen&#34; written in few combinations of uppercase and lowercase letters. &lt;/p&gt;
+&lt;p&gt;I thought that the whole process could be easily automated with a simple Python script that would repack the theme on the fly while doing all the necessary string substitutions in file contents as well as in the paths. &lt;/p&gt;
+&lt;p&gt;The script is available &lt;a href=&#34;https://github.com/kmbt/hydrogen-renamer&#34;&gt;here on Github&lt;/a&gt;. I hope that it will be useful for people willing to develop themes using Gantry 5 framework.&lt;/p&gt;</content>
+    </entry>
+    
+        <entry>
+        <title>Hello World!</title>
+        <link rel="alternate" type="text/html" href="http://kmbt.github.io/2015/hello-world/" />
+        <id>tag:kmbt.github.io,2015-11-21:/2015/hello-world</id>
+        <updated>2015-11-20T23:00:00Z</updated>
+        
+        <author>
+            <name>kmbt</name>
+            <uri>http://kmbt.github.io/</uri>
+            <email>mail@example.com</email>
+        </author>
+        <content type="html">&lt;p&gt;This is my first post on this website. It is also the first time I am using the &lt;a href=&#34;http://blog.getpelican.com&#34;&gt;pelican&lt;/a&gt; static site generation engine. It is quite surprising for me to find out how the static site generation has recently gained much popularity - as I understand, mainly due to the increasing availability of high performance content delivery networks, and also due to concerns about the security of dynamic websites. &lt;/p&gt;
+&lt;p&gt;What I am going to do with this website is to try to share some of my little discoveries and solutions to some common problems in the areas of my personal and professional interest. I hope that the information will be useful to visitors coming here via web search engines, seeking solutions to problems similar to mine and also to people that might want to know what some of my interests are.&lt;/p&gt;
+&lt;p&gt;See you in the next posts!&lt;/p&gt;</content>
+    </entry>
+    </feed>

@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>kmbt on code, universe and everything</title>
+  <title>htdebug, a script for tracing HTTP redirects</title>
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
@@ -24,6 +24,8 @@
   <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
+    <meta name="description" content="Recently, I have written a simple Python script th..." />
+    <meta name="keywords" content="htdebug, python, http redirects, lxml" />
 </head>
 <body>
   <header>
@@ -84,7 +86,22 @@ along with in&shy;for&shy;ma&shy;tion on rel=canonical links. I called it htdebu
 <span class="err">    response = requests.get(url)</span>
 <span class="err">    for resp in response.history+[response]:</span>
 <span class="err">        print</span>
-<span class="err"> </span></pre><span>&#8230;<a href="/2015/htdebug-a-script-for-tracing-http-redirects/" class="continue">continue</a>.</span></div>
+<span class="err">        print &quot;[{}] {}&quot;.format(resp.status_code, resp.url)</span>
+<span class="err">        print &quot;canonical link: {}&quot;.format(get_canonical(resp.content))</span>
+</pre></div>
+<p>After placing it in a executable file named htdebug in your $PATH, you can
+use it like so:</p>
+<div class="highlight"><pre><span class="err">$ htdebug http://yahoo.com</span>
+<span class="err">Probing http://yahoo.com for redirect path.</span>
+
+<span class="err">[301] http://yahoo.com/</span>
+<span class="err">canonical link: []</span>
+
+<span class="err">[200] https://www.yahoo.com/</span>
+<span class="err">canonical link: [&#39;https://www.yahoo.com/&#39;]</span>
+</pre></div>
+<p>HTTP status codes are shown in square brackets.</p>
+
     <footer>
         
         
@@ -102,51 +119,10 @@ along with in&shy;for&shy;ma&shy;tion on rel=canonical links. I called it htdebu
     <div class="comments"></div>
 </article>
     
-        <article>
-    <header>
-        <h1>
-            <a href="/2015/hydrogen-renamer/" rel="bookmark canonical">Hydrogen Renamer</a>
-        </h1>
-        <time datetime="2015-11-22">2015-11-22</time>
-    </header>
-    <p>TL;DR: This <a href="https://github.com/kmbt/hydrogen-renamer">script</a> will help you rename the Gantry 5 Hydrogen theme as a starting point for further cus&shy;tomiza&shy;tions.</p>
-<p>Recently, I've been trying out the <a href="http://gantry.org">Gantry 5</a> - a theme framework for Wordpress. One way to get started with theme de&shy;vel&shy;op&shy;ment using Gantry 5 is to take the default theme, called Hydrogen, rename it and customize it to one's needs.</p>
-<p>The whole renaming process is described <a href="http://docs.gantry.org/gantry5/theme-development/change-theme-name">here</a>. It takes few steps, which involve unzipping the theme, changing names of files and di&shy;rec&shy;to&shy;ries and doing a <em>find and replace</em> for the word "hydrogen" written in few com&shy;bi&shy;na&shy;tions of uppercase and lowercase letters. </p>
-<p>I <span>&#8230;<a href="/2015/hydrogen-renamer/" class="continue">continue</a>.</span></p>
-    <footer>
-        
-        
-            <p>tagged as
-                <a href="/tag/gantry/" rel="tag">gantry</a>,
-                <a href="/tag/wordpress/" rel="tag">wordpress</a>
-                    and
-                    
-                <a href="/tag/php/" rel="tag">php</a>
-                
-            </p>
-        
-    </footer>
-    <div class="comments"></div>
-</article>
     
-        <article>
-    <header>
-        <h1>
-            <a href="/2015/hello-world/" rel="bookmark canonical">Hello World!</a>
-        </h1>
-        <time datetime="2015-11-21">2015-11-21</time>
-    </header>
-    <p>This is my first post on this website. It is also the first time I am using the <a href="http://blog.getpelican.com">pelican</a> static site generation engine. It is quite surprising for me to find out how the static site generation has recently gained much popularity - as I understand, mainly due to the increasing avail&shy;abil&shy;i&shy;ty of high per&shy;for&shy;mance content delivery networks, and also due to concerns about the security of dynamic websites. </p>
-<p>What I am going to do with this website is to try to share some of my little dis&shy;cov&shy;er&shy;ies and solutions to some common problems in the areas of my personal <span>&#8230;<a href="/2015/hello-world/" class="continue">continue</a>.</span></p>
-    <footer>
-        
-        
-            <p>untagged</p>
-        
-    </footer>
-    <div class="comments"></div>
-</article>
-    
+        <a href="/2015/hydrogen-renamer//" class="page floatright">
+        Hydrogen Renamer &raquo;
+        </a>
     
     
 </div>
