@@ -11,8 +11,117 @@
     <link rel="self" type="application/atom+xml" href="http://kmbt.github.io/atom/" />
     <icon>http://kmbt.github.io/favicon.ico</icon>
     <logo>http://kmbt.github.io/feed-logo.png</logo>
-    <updated>2015-12-10T23:00:00Z</updated>
+    <updated>2015-12-15T11:38:00Z</updated>
     <generator uri="https://github.com/posativ/acrylamid/" version="0.7.10">acrylamid</generator>
+        <entry>
+        <title>Enable ISO 8061 date format in Thunderbird (and the rest of userland)</title>
+        <link rel="alternate" type="text/html" href="http://kmbt.github.io/2015/enable-iso-8061-date-format-in-thunderbird-and-the-rest-of-userland/" />
+        <id>tag:kmbt.github.io,2015-12-15:/2015/enable-iso-8061-date-format-in-thunderbird-and-the-rest-of-userland</id>
+        <updated>2015-12-15T11:38:00Z</updated>
+        <category term="linux" />
+        <category term="debian" />
+        <category term="locale" />
+        <category term="iso date" />
+        
+        <author>
+            <name>kmbt</name>
+            <uri>http://kmbt.github.io/</uri>
+            <email>mail@example.com</email>
+        </author>
+        <content type="html">&lt;p&gt;Just add the following line to your &lt;code&gt;/etc/environment&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;LC_TIME=en_DK.utf8&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;DK? &lt;a href=&#34;https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=137870&#34;&gt;Yes&lt;/a&gt;.&lt;/p&gt;</content>
+    </entry>
+    
+        <entry>
+        <title>BuiltWith lookup script</title>
+        <link rel="alternate" type="text/html" href="http://kmbt.github.io/2015/builtwith-lookup-script/" />
+        <id>tag:kmbt.github.io,2015-12-11:/2015/builtwith-lookup-script</id>
+        <updated>2015-12-10T23:00:00Z</updated>
+        <category term="builtwith" />
+        <category term="python" />
+        <category term="lxml" />
+        <category term="web scraping" />
+        
+        <author>
+            <name>kmbt</name>
+            <uri>http://kmbt.github.io/</uri>
+            <email>mail@example.com</email>
+        </author>
+        <content type="html">&lt;p&gt;&lt;a href=&#34;http://builtwith.com&#34;&gt;BuiltWith&lt;/a&gt; is a web service that lets you check what web technologies are used on a given website. This simple script lets you do that directly from command line.&lt;/p&gt;
+&lt;table class=&#34;highlighttable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;linenos&#34;&gt;&lt;div class=&#34;linenodiv&#34;&gt;&lt;pre&gt; 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;span class=&#34;c&#34;&gt;#!/usr/bin/env python&lt;/span&gt;
+
+&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;urlparse&lt;/span&gt;
+&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;sys&lt;/span&gt;
+&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;requests&lt;/span&gt;
+
+&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;lxml&lt;/span&gt;
+&lt;span class=&#34;kn&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;lxml&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;etree&lt;/span&gt;
+&lt;span class=&#34;kn&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;cStringIO&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;StringIO&lt;/span&gt;
+
+&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;__name__&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;quot;__main__&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;domain&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sys&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;argv&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;base_url&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;quot;http://builtwith.com/&amp;quot;&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;url&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;urlparse&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;urljoin&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;base_url&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;domain&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;print&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;quot;Visiting {} ...&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\n&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;format&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;url&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;response&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;requests&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;get&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;url&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+    &lt;span class=&#34;n&#34;&gt;parser&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;etree&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;HTMLParser&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;tree&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;etree&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;parse&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;StringIO&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;response&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;content&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;parser&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+    &lt;span class=&#34;n&#34;&gt;tech_items&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;tree&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;xpath&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;//div[contains(@class, &amp;#39;techItem&amp;#39;)]//h3&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;item&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;tech_items&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;print&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;join&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;item&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;itertext&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;())&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;strip&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;After placing it in a executable file named builtwith in your &lt;code&gt;$PATH&lt;/code&gt;, you can
+use it like so:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;span class=&#34;nv&#34;&gt;$ &lt;/span&gt;builtwith 37signals.com
+Visiting http://builtwith.com/37signals.com ...
+
+GeoTrust SSL
+RapidSSL
+Dyn DNS
+Google Apps &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; Business
+Postmark
+Campaign Monitor
+DKIM
+SPF
+Shockwave Flash Embed
+Google Conversion Tracking
+Clicky
+html5shiv
+Prototype
+YouTube
+Amazon S3
+IPhone / Mobile Compatible
+Device Width
+&lt;/pre&gt;&lt;/div&gt;</content>
+    </entry>
+    
         <entry>
         <title>htdebug, a script for tracing HTTP redirects</title>
         <link rel="alternate" type="text/html" href="http://kmbt.github.io/2015/htdebug-a-script-for-tracing-http-redirects/" />
@@ -31,111 +140,72 @@
         <content type="html">&lt;p&gt;Recently, I have written a simple Python script that helps trace HTTP redirects
 along with information on rel=canonical links. I called it htdebug.&lt;/p&gt;
 &lt;p&gt;Here it is:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;#!/usr/bin/env python&lt;/span&gt;
+&lt;table class=&#34;highlighttable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;linenos&#34;&gt;&lt;div class=&#34;linenodiv&#34;&gt;&lt;pre&gt; 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;span class=&#34;c&#34;&gt;#!/usr/bin/env python&lt;/span&gt;
 
-&lt;span class=&#34;err&#34;&gt;import urllib&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;import urllib2&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;import sys&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;import requests&lt;/span&gt;
+&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;urllib&lt;/span&gt;
+&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;urllib2&lt;/span&gt;
+&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;sys&lt;/span&gt;
+&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;requests&lt;/span&gt;
 
-&lt;span class=&#34;err&#34;&gt;import lxml&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;from lxml import etree&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;from cStringIO import StringIO&lt;/span&gt;
+&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;lxml&lt;/span&gt;
+&lt;span class=&#34;kn&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;lxml&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;etree&lt;/span&gt;
+&lt;span class=&#34;kn&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;cStringIO&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;StringIO&lt;/span&gt;
 
-&lt;span class=&#34;err&#34;&gt;def get_canonical(html_content):&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;    parser = etree.HTMLParser()&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;    tree = etree.parse(StringIO(html_content), parser)&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;    canonical_hrefs = tree.xpath(&amp;quot;/html/head/link[@rel=&amp;#39;canonical&amp;#39;]/@href&amp;quot;)&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;    return canonical_hrefs&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;get_canonical&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;html_content&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;parser&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;etree&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;HTMLParser&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;tree&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;etree&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;parse&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;StringIO&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;html_content&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;parser&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;canonical_hrefs&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;tree&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;xpath&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;/html/head/link[@rel=&amp;#39;canonical&amp;#39;]/@href&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;canonical_hrefs&lt;/span&gt;
 
-&lt;span class=&#34;err&#34;&gt;if __name__ == &amp;quot;__main__&amp;quot;:&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;    url = sys.argv[1]&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;    print &amp;quot;Probing {} for redirect path.&amp;quot;.format(url)&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;    response = requests.get(url)&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;    for resp in response.history+[response]:&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;        print&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;        print &amp;quot;[{}] {}&amp;quot;.format(resp.status_code, resp.url)&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;        print &amp;quot;canonical link: {}&amp;quot;.format(get_canonical(resp.content))&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;__name__&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;quot;__main__&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;url&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sys&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;argv&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;print&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;quot;Probing {} for redirect path.&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;format&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;url&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;response&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;requests&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;get&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;url&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;resp&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;response&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;history&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;response&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]:&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;print&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;print&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;quot;[{}] {}&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;format&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;resp&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;status_code&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;resp&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;url&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;print&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;quot;canonical link: {}&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;format&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;get_canonical&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;resp&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;content&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;After placing it in a executable file named htdebug in your $PATH, you can
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;After placing it in a executable file named htdebug in your &lt;code&gt;$PATH&lt;/code&gt;, you can
 use it like so:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;$ htdebug http://yahoo.com&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;Probing http://yahoo.com for redirect path.&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;span class=&#34;nv&#34;&gt;$ &lt;/span&gt;htdebug http://yahoo.com
+Probing http://yahoo.com &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; redirect path.
 
-&lt;span class=&#34;err&#34;&gt;[301] http://yahoo.com/&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;canonical link: []&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;301&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; http://yahoo.com/
+canonical link: &lt;span class=&#34;o&#34;&gt;[]&lt;/span&gt;
 
-&lt;span class=&#34;err&#34;&gt;[200] https://www.yahoo.com/&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;canonical link: [&amp;#39;https://www.yahoo.com/&amp;#39;]&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;200&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; https://www.yahoo.com/
+canonical link: &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;https://www.yahoo.com/&amp;#39;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;HTTP status codes are shown in square brackets.&lt;/p&gt;
-</content>
-    </entry>
-    
-        <entry>
-        <title>BuiltWith lookup script</title>
-        <link rel="alternate" type="text/html" href="http://kmbt.github.io/2015/builtwith-lookup-script/" />
-        <id>tag:kmbt.github.io,2015-12-11:/2015/builtwith-lookup-script</id>
-        <updated>2015-12-10T23:00:00Z</updated>
-        <category term="builtwith" />
-        <category term="python" />
-        <category term="lxml" />
-        <category term="web scraping" />
-        
-        <author>
-            <name>kmbt</name>
-            <uri>http://kmbt.github.io/</uri>
-            <email>mail@example.com</email>
-        </author>
-        <content type="html">&lt;p&gt;&lt;a class=&#34;reference external&#34; href=&#34;http://builtwith.com&#34;&gt;BuiltWith&lt;/a&gt; is a web service that lets you check what web technologies are used on a given website. This simple script lets you do that directly from command line.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;#!/usr/bin/env python&lt;/span&gt;
 
-&lt;span class=&#34;err&#34;&gt;import urlparse&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;import sys&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;import requests&lt;/span&gt;
 
-&lt;span class=&#34;err&#34;&gt;import lxml&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;from lxml import etree&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;from cStringIO import StringIO&lt;/span&gt;
-
-&lt;span class=&#34;err&#34;&gt;if __name__ == &amp;quot;__main__&amp;quot;:&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;        domain = sys.argv[1]&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;        base_url = &amp;quot;http://builtwith.com/&amp;quot;&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;        url = urlparse.urljoin(base_url, domain)&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;        print &amp;quot;Visiting {} ...\n&amp;quot;.format(url)&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;        response = requests.get(url)&lt;/span&gt;
-
-&lt;span class=&#34;err&#34;&gt;        parser = etree.HTMLParser()&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;        tree = etree.parse(StringIO(response.content), parser)&lt;/span&gt;
-
-&lt;span class=&#34;err&#34;&gt;        tech_items = tree.xpath(&amp;quot;//div[contains(@class, &amp;#39;techItem&amp;#39;)]//h3&amp;quot;)&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;        for item in tech_items:&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;                print &amp;quot;&amp;quot;.join(item.itertext()).strip()&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;After placing it in a executable file named builtwith in your $PATH, you can
-use it like so:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;span class=&#34;err&#34;&gt;$ builtwith 37signals.com&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;Visiting http://builtwith.com/37signals.com ...&lt;/span&gt;
-
-&lt;span class=&#34;err&#34;&gt;GeoTrust SSL&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;RapidSSL&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;Dyn DNS&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;Google Apps for Business&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;Postmark&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;Campaign Monitor&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;DKIM&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;SPF&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;Shockwave Flash Embed&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;Google Conversion Tracking&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;Clicky&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;html5shiv&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;Prototype&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;YouTube&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;Amazon S3&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;IPhone / Mobile Compatible&lt;/span&gt;
-&lt;span class=&#34;err&#34;&gt;Device Width&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-</content>
+&lt;p&gt;HTTP status codes are shown in square brackets.&lt;/p&gt;</content>
     </entry>
     
         <entry>

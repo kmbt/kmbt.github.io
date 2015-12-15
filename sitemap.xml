@@ -1,81 +1,61 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://kmbt.github.io/tag/wordpress/</loc>
-    <lastmod>2015-12-11</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>http://kmbt.github.io/2015/enable-iso-8061-date-format-in-thunderbird-and-the-rest-of-userland/</loc>
+    <lastmod>2015-12-15</lastmod>
+    <changefreq>never</changefreq>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>http://kmbt.github.io/2015/builtwith-lookup-script/</loc>
-    <lastmod>2015-12-11</lastmod>
+    <lastmod>2015-12-15</lastmod>
     <changefreq>never</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>http://kmbt.github.io/tag/debian/</loc>
+    <lastmod>2015-12-15</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>http://kmbt.github.io/tag/lxml/</loc>
+    <lastmod>2015-12-15</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>http://kmbt.github.io/tag/locale/</loc>
+    <lastmod>2015-12-15</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>http://kmbt.github.io/tag/http-redirects/</loc>
-    <lastmod>2015-12-11</lastmod>
+    <lastmod>2015-12-15</lastmod>
     <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>http://kmbt.github.io/tag/php/</loc>
-    <lastmod>2015-12-11</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>http://kmbt.github.io/atom/</loc>
-    <lastmod>2015-12-11</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>http://kmbt.github.io/2015/hydrogen-renamer/</loc>
-    <lastmod>2015-12-11</lastmod>
-    <changefreq>never</changefreq>
-    <priority>1.0</priority>
   </url>
   <url>
     <loc>http://kmbt.github.io/tag/builtwith/</loc>
-    <lastmod>2015-12-11</lastmod>
+    <lastmod>2015-12-15</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>http://kmbt.github.io/2015/htdebug-a-script-for-tracing-http-redirects/</loc>
-    <lastmod>2015-12-11</lastmod>
+    <lastmod>2015-12-15</lastmod>
     <changefreq>never</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://kmbt.github.io/tag/web-scraping/</loc>
-    <lastmod>2015-12-11</lastmod>
+    <lastmod>2015-12-15</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>http://kmbt.github.io/</loc>
-    <lastmod>2015-12-11</lastmod>
+    <loc>http://kmbt.github.io/atom/</loc>
+    <lastmod>2015-12-15</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>http://kmbt.github.io/tag/python/</loc>
-    <lastmod>2015-12-11</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>http://kmbt.github.io/tag/lxml/</loc>
-    <lastmod>2015-12-11</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>http://kmbt.github.io/tag/gantry/</loc>
-    <lastmod>2015-12-11</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>http://kmbt.github.io/articles/</loc>
-    <lastmod>2015-12-11</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>http://kmbt.github.io/rss/</loc>
-    <lastmod>2015-12-11</lastmod>
+    <loc>http://kmbt.github.io/tag/iso-date/</loc>
+    <lastmod>2015-12-15</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
@@ -86,7 +66,53 @@
   </url>
   <url>
     <loc>http://kmbt.github.io/tag/htdebug/</loc>
-    <lastmod>2015-12-11</lastmod>
+    <lastmod>2015-12-15</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>http://kmbt.github.io/tag/wordpress/</loc>
+    <lastmod>2015-12-15</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>http://kmbt.github.io/tag/gantry/</loc>
+    <lastmod>2015-12-15</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>http://kmbt.github.io/</loc>
+    <lastmod>2015-12-15</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>http://kmbt.github.io/tag/python/</loc>
+    <lastmod>2015-12-15</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>http://kmbt.github.io/tag/linux/</loc>
+    <lastmod>2015-12-15</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>http://kmbt.github.io/2015/hydrogen-renamer/</loc>
+    <lastmod>2015-12-15</lastmod>
+    <changefreq>never</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>http://kmbt.github.io/articles/</loc>
+    <lastmod>2015-12-15</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>http://kmbt.github.io/rss/</loc>
+    <lastmod>2015-12-15</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>http://kmbt.github.io/tag/php/</loc>
+    <lastmod>2015-12-15</lastmod>
     <changefreq>weekly</changefreq>
   </url>
 </urlset>

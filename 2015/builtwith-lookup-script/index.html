@@ -24,7 +24,7 @@
   <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
-    <meta name="description" content="`BuiltWith &lt;http://builtwith.com&gt;`_ is a web servi..." />
+    <meta name="description" content="[BuiltWith](http://builtwith.com) is a web service..." />
     <meta name="keywords" content="builtwith, python, lxml, web scraping" />
 </head>
 <body>
@@ -60,55 +60,78 @@
         </h1>
         <time datetime="2015-12-11">2015-12-11</time>
     </header>
-    <p><a class="reference external" href="http://builtwith.com">BuiltWith</a> is a web service that lets you check what web tech&shy;nolo&shy;gies are used on a given website. This simple script lets you do that directly from command line.</p>
-<div class="highlight"><pre><span class="err">#!/usr/bin/env python</span>
+    <p><a href="http://builtwith.com">BuiltWith</a> is a web service that lets you check what web tech&shy;nolo&shy;gies are used on a given website. This simple script lets you do that directly from command line.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23</pre></div></td><td class="code"><div class="highlight"><pre><span class="c">#!/usr/bin/env python</span>
 
-<span class="err">import urlparse</span>
-<span class="err">import sys</span>
-<span class="err">import requests</span>
+<span class="kn">import</span> <span class="nn">urlparse</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="err">import lxml</span>
-<span class="err">from lxml import etree</span>
-<span class="err">from cStringIO import StringIO</span>
+<span class="kn">import</span> <span class="nn">lxml</span>
+<span class="kn">from</span> <span class="nn">lxml</span> <span class="kn">import</span> <span class="n">etree</span>
+<span class="kn">from</span> <span class="nn">cStringIO</span> <span class="kn">import</span> <span class="n">StringIO</span>
 
-<span class="err">if __name__ == &quot;__main__&quot;:</span>
-<span class="err">        domain = sys.argv[1]</span>
-<span class="err">        base_url = &quot;http://builtwith.com/&quot;</span>
-<span class="err">        url = urlparse.urljoin(base_url, domain)</span>
-<span class="err">        print &quot;Visiting {} ...\n&quot;.format(url)</span>
-<span class="err">        response = requests.get(url)</span>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">domain</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">base_url</span> <span class="o">=</span> <span class="s">&quot;http://builtwith.com/&quot;</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="n">urlparse</span><span class="o">.</span><span class="n">urljoin</span><span class="p">(</span><span class="n">base_url</span><span class="p">,</span> <span class="n">domain</span><span class="p">)</span>
+    <span class="k">print</span> <span class="s">&quot;Visiting {} ...</span><span class="se">\n</span><span class="s">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 
-<span class="err">        parser = etree.HTMLParser()</span>
-<span class="err">        tree = etree.parse(StringIO(response.content), parser)</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">HTMLParser</span><span class="p">()</span>
+    <span class="n">tree</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">StringIO</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">),</span> <span class="n">parser</span><span class="p">)</span>
 
-<span class="err">        tech_items = tree.xpath(&quot;//div[contains(@class, &#39;techItem&#39;)]//h3&quot;)</span>
-<span class="err">        for item in tech_items:</span>
-<span class="err">                print &quot;&quot;.join(item.itertext()).strip()</span>
+    <span class="n">tech_items</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s">&quot;//div[contains(@class, &#39;techItem&#39;)]//h3&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">tech_items</span><span class="p">:</span>
+        <span class="k">print</span> <span class="s">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">itertext</span><span class="p">())</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
 </pre></div>
-<p>After placing it in a executable file named builtwith in your $PATH, you can
+</td></tr></table>
+
+<p>After placing it in a executable file named builtwith in your <code>$PATH</code>, you can
 use it like so:</p>
-<div class="highlight"><pre><span class="err">$ builtwith 37signals.com</span>
-<span class="err">Visiting http://builtwith.com/37signals.com ...</span>
+<div class="highlight"><pre><span class="nv">$ </span>builtwith 37signals.com
+Visiting http://builtwith.com/37signals.com ...
 
-<span class="err">GeoTrust SSL</span>
-<span class="err">RapidSSL</span>
-<span class="err">Dyn DNS</span>
-<span class="err">Google Apps for Business</span>
-<span class="err">Postmark</span>
-<span class="err">Campaign Monitor</span>
-<span class="err">DKIM</span>
-<span class="err">SPF</span>
-<span class="err">Shockwave Flash Embed</span>
-<span class="err">Google Conversion Tracking</span>
-<span class="err">Clicky</span>
-<span class="err">html5shiv</span>
-<span class="err">Prototype</span>
-<span class="err">YouTube</span>
-<span class="err">Amazon S3</span>
-<span class="err">IPhone / Mobile Compatible</span>
-<span class="err">Device Width</span>
+GeoTrust SSL
+RapidSSL
+Dyn DNS
+Google Apps <span class="k">for</span> Business
+Postmark
+Campaign Monitor
+DKIM
+SPF
+Shockwave Flash Embed
+Google Conversion Tracking
+Clicky
+html5shiv
+Prototype
+YouTube
+Amazon S3
+IPhone / Mobile Compatible
+Device Width
 </pre></div>
-
     <footer>
         
         
@@ -127,13 +150,13 @@ use it like so:</p>
 </article>
     
     
-        <a href="/2015/hydrogen-renamer//" class="page floatright">
-        Hydrogen Renamer &raquo;
+        <a href="/2015/htdebug-a-script-for-tracing-http-redirects//" class="page floatright">
+        htdebug, a script for tracing HTTP redirects &raquo;
         </a>
     
     
-        <a href="/2015/htdebug-a-script-for-tracing-http-redirects//" class="page floatleft">
-        &laquo; htdebug, a script for tracing HTTP redirects
+        <a href="/2015/enable-iso-8061-date-format-in-thunderbird-and-the-rest-of-userland//" class="page floatleft">
+        &laquo; Enable ISO 8061 date format in Thunderbird (and the rest of userland)
         </a>
 </div>
 
