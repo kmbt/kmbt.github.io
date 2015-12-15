@@ -95,6 +95,11 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
+    <loc>http://kmbt.github.io/tag/thunderbird/</loc>
+    <lastmod>2015-12-15</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>http://kmbt.github.io/2015/hydrogen-renamer/</loc>
     <lastmod>2015-12-15</lastmod>
     <changefreq>never</changefreq>
