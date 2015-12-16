@@ -54,6 +54,39 @@
         <article>
     <header>
         <h1>
+            <a href="/2015/remove-all-pyc-files-from-a-git-repository/" rel="bookmark canonical">Remove all .pyc files from a git repository</a>
+        </h1>
+        <time datetime="2015-12-16">2015-12-16</time>
+    </header>
+    <p>When working on Python project you may sometimes forget to <code>.gitignore</code> your
+<code>*.pyc</code> files and end up having them tracked by the repo.</p>
+<p>To fix this you need use <code>git rm</code>:</p>
+<p><code>find . -name "*.pyc" -exec git rm -f {} \;</code></p>
+<p>Then, add a line:</p>
+<p><code>*.pyc</code></p>
+<p>to the <code>.gitignore</code> file in the repository root to have them per&shy;ma&shy;nent&shy;ly
+ignored.</p>
+<p>Credit goes to <a href="https://yuji.wordpress.com/2010/10/29/git-remove-all-pyc/">Yuji</a>.</p>
+    <footer>
+        
+        
+            <p class="tags">tagged as
+                <a href="/tag/python/" rel="tag">python</a>,
+                <a href="/tag/git/" rel="tag">git</a>,
+                <a href="/tag/find/" rel="tag">find</a>
+                    and
+                    
+                <a href="/tag/shell-fu/" rel="tag">shell-fu</a>
+                
+            </p>
+        
+    </footer>
+    <div class="comments"></div>
+</article>
+    
+        <article>
+    <header>
+        <h1>
             <a href="/2015/builtwith-lookup-script/" rel="bookmark canonical">BuiltWith lookup script</a>
         </h1>
         <time datetime="2015-12-11">2015-12-11</time>
