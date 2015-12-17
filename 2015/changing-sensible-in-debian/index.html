@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>kmbt on code, universe and everything – Artikelübersicht</title>
+  <title>Changing sensible-* in Debian</title>
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
@@ -24,6 +24,8 @@
   <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
+    <meta name="description" content="To change the default editor (`sensible-editor`):..." />
+    <meta name="keywords" content="linux, debian, shell-fu" />
 </head>
 <body>
   <header>
@@ -50,71 +52,43 @@
     </nav>
   </header>
   <div class="container">
-<article>
-    <table id="arc">
     
+        <article>
+    <header>
+        <h1>
+            <a href="/2015/changing-sensible-in-debian/" rel="bookmark canonical">Changing sensible-* in Debian</a>
+        </h1>
+        <time datetime="2015-12-17">2015-12-17</time>
+    </header>
+    <p>To change the default editor (<code>sensible-editor</code>):</p>
+<p><code># update-alternatives --config editor</code></p>
+<p>, similarly, for <code>sensible-browser</code>:</p>
+<p><code># update-alternatives --config x-www-browser</code></p>
+<p>, and for the <code>sensible-pager</code> use:</p>
+<p><code># update-alternatives --config pager</code></p>
+<p>Thanks, <a href="http://www.shellperson.net/change-sensible-editor/">Shell Person</a>.</p>
+    <footer>
         
-            <tr>
-            
-                <th>2015 December</th>
-            
-            <td></td>
-            </tr>
-
-            
-                <tr>
-                    <th>17</th>
-                    <td><a href="/2015/changing-alternatives-sensible-in-debian/">Changing Alternatives (sensible-*) in Debian</a></td>
-                </tr>
-            
-                <tr>
-                    <th>17</th>
-                    <td><a href="/2015/how-to-spin-down-usb-hard-drive-for-safe-removal/">How to spin down USB hard drive for safe removal</a></td>
-                </tr>
-            
-                <tr>
-                    <th>16</th>
-                    <td><a href="/2015/remove-all-pyc-files-from-a-git-repository/">Remove all .pyc files from a git repository</a></td>
-                </tr>
-            
-                <tr>
-                    <th>15</th>
-                    <td><a href="/2015/enable-iso-8061-date-format-in-thunderbird-and-the-rest-of-userland/">Enable ISO 8061 date format in Thunderbird (and the rest of userland)</a></td>
-                </tr>
-            
-                <tr>
-                    <th>11</th>
-                    <td><a href="/2015/builtwith-lookup-script/">BuiltWith lookup script</a></td>
-                </tr>
-            
-                <tr>
-                    <th>11</th>
-                    <td><a href="/2015/htdebug-a-script-for-tracing-http-redirects/">htdebug, a script for tracing HTTP redirects</a></td>
-                </tr>
-            
         
-            <tr>
-            
-                <th>November</th>
-            
-            <td></td>
-            </tr>
-
-            
-                <tr>
-                    <th>22</th>
-                    <td><a href="/2015/hydrogen-renamer/">Hydrogen Renamer</a></td>
-                </tr>
-            
-                <tr>
-                    <th>21</th>
-                    <td><a href="/2015/hello-world/">Hello World!</a></td>
-                </tr>
-            
+            <p class="tags">tagged as
+                <a href="/tag/linux/" rel="tag">linux</a>,
+                <a href="/tag/debian/" rel="tag">debian</a>
+                    and
+                    
+                <a href="/tag/shell-fu/" rel="tag">shell-fu</a>
+                
+            </p>
         
-    
-    </table>
+    </footer>
+    <div class="comments"></div>
 </article>
+    
+    
+        <a href="/2015/how-to-spin-down-usb-hard-drive-for-safe-removal//" class="page floatright">
+        How to spin down USB hard drive for safe removal &raquo;
+        </a>
+    
+    
 </div>
 
 </body>

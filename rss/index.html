@@ -5,9 +5,39 @@
         <link>http://kmbt.github.io/</link>
         <description></description>
         <language>en</language>
-        <pubDate>Wed, 16 Dec 2015 09:30:00 GMT</pubDate>
+        <pubDate>Thu, 17 Dec 2015 07:41:00 GMT</pubDate>
         <docs>http://kmbt.github.io/rss/</docs>
         <generator>acrylamid 0.7.10</generator>
+        
+            <item>
+        <title>Changing Alternatives (sensible-*) in Debian</title>
+        <link>http://kmbt.github.io/2015/changing-alternatives-sensible-in-debian/</link>
+        <description>&lt;p&gt;To change the default editor (&lt;code&gt;sensible-editor&lt;/code&gt;):&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;# update-alternatives --config editor&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;, similarly, for &lt;code&gt;sensible-browser&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;# update-alternatives --config x-www-browser&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;, and for the &lt;code&gt;sensible-pager&lt;/code&gt; use:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;# update-alternatives --config pager&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Thanks, &lt;a href=&#34;http://www.shellperson.net/change-sensible-editor/&#34;&gt;Shell Person&lt;/a&gt;.&lt;/p&gt;</description>
+        <pubDate>Thu, 17 Dec 2015 07:41:00 GMT</pubDate>
+        <guid isPermaLink="false">tag:kmbt.github.io,2015-12-17:/2015/changing-alternatives-sensible-in-debian</guid>
+    </item>
+        
+            <item>
+        <title>How to spin down USB hard drive for safe removal</title>
+        <link>http://kmbt.github.io/2015/how-to-spin-down-usb-hard-drive-for-safe-removal/</link>
+        <description>&lt;p&gt;Let&#39;s assume you are running a Debian-based system and have a hard drive at &lt;code&gt;/dev/sdc&lt;/code&gt; with a partition &lt;code&gt;/dev/sdc1&lt;/code&gt;
+mounted. To safely remove the hard drive, first you need to unmount all its
+partitions. In this case you may do:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;udisks --umount /dev/sdc1&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;and then spin the disk down with:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;udisks --detach /dev/sdc&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Please note, that we are referring here to the device &lt;code&gt;sdc&lt;/code&gt; not its partition 
+&lt;code&gt;sdc1&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Thanks, &lt;a href=&#34;http://askubuntu.com/a/190668&#34;&gt;user76204&lt;/a&gt;.&lt;/p&gt;</description>
+        <pubDate>Thu, 17 Dec 2015 07:26:00 GMT</pubDate>
+        <guid isPermaLink="false">tag:kmbt.github.io,2015-12-17:/2015/how-to-spin-down-usb-hard-drive-for-safe-removal</guid>
+    </item>
         
             <item>
         <title>Remove all .pyc files from a git repository</title>
