@@ -11,8 +11,47 @@
     <link rel="self" type="application/atom+xml" href="http://kmbt.github.io/atom/" />
     <icon>http://kmbt.github.io/favicon.ico</icon>
     <logo>http://kmbt.github.io/feed-logo.png</logo>
-    <updated>2015-12-17T07:41:00Z</updated>
+    <updated>2015-12-17T23:46:00Z</updated>
     <generator uri="https://github.com/posativ/acrylamid/" version="0.7.10">acrylamid</generator>
+        <entry>
+        <title>Safely removing SATA hard drive from a running system</title>
+        <link rel="alternate" type="text/html" href="http://kmbt.github.io/2015/safely-removing-sata-hard-drive-from-a-running-system/" />
+        <id>tag:kmbt.github.io,2015-12-18:/2015/safely-removing-sata-hard-drive-from-a-running-system</id>
+        <updated>2015-12-17T23:46:00Z</updated>
+        <category term="linux" />
+        <category term="sata" />
+        <category term="disks" />
+        
+        <author>
+            <name>kmbt</name>
+            <uri>http://kmbt.github.io/</uri>
+            <email>mail@example.com</email>
+        </author>
+        <content type="html">&lt;p&gt;I have a Debian-based system with a SATA controller running in AHCI mode. I sometimes need to plug and unplug a disk from an internal SATA bay. The bay is nothing fancy - you just  slide a disk cradle into it and the SATA and power sockets make contact.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://unix.stackexchange.com/a/43450&#34;&gt;Wyzard on Unix &amp;amp; Linux Stack Exchange&lt;/a&gt; has an advice on how to do a proper hot unplug.&lt;/p&gt;
+&lt;p&gt;First you need to unmount the partitions. Then, deactivate any LVM groups with &lt;code&gt;vgchange -an&lt;/code&gt; - I don&#39;t use LVM, so I haven&#39;t tried that. Finally, it is a very good idea to unregister device from the kernel and spin it down by &lt;/p&gt;
+&lt;p&gt;&lt;code&gt;echo 1 &amp;gt; /sys/block/(device name)/device/delete&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Then I can hear the disk spin down, wait for it to stop completely and just pull it out. When I put in back in, it registers properly. Please note, that I am using AHCI mode in the controller.&lt;/p&gt;</content>
+    </entry>
+    
+        <entry>
+        <title>Identifont - an online toolkit to find and identify fonts</title>
+        <link rel="alternate" type="text/html" href="http://kmbt.github.io/2015/identifont-an-online-toolkit-to-find-and-identify-fonts/" />
+        <id>tag:kmbt.github.io,2015-12-17:/2015/identifont-an-online-toolkit-to-find-and-identify-fonts</id>
+        <updated>2015-12-17T12:39:00Z</updated>
+        <category term="fonts" />
+        <category term="dtp" />
+        
+        <author>
+            <name>kmbt</name>
+            <uri>http://kmbt.github.io/</uri>
+            <email>mail@example.com</email>
+        </author>
+        <content type="html">&lt;p&gt;&lt;a href=&#34;http://www.identifont.com&#34;&gt;Identifont&lt;/a&gt; - an online font identification toolkit lets you identify fonts
+by such criteria as appearance traits, name, similarity and picture upload.&lt;/p&gt;
+&lt;p&gt;I find it very useful.&lt;/p&gt;</content>
+    </entry>
+    
         <entry>
         <title>Changing Alternatives (sensible-*) in Debian</title>
         <link rel="alternate" type="text/html" href="http://kmbt.github.io/2015/changing-alternatives-sensible-in-debian/" />

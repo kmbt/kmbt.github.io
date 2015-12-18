@@ -5,9 +5,31 @@
         <link>http://kmbt.github.io/</link>
         <description></description>
         <language>en</language>
-        <pubDate>Thu, 17 Dec 2015 07:41:00 GMT</pubDate>
+        <pubDate>Thu, 17 Dec 2015 23:46:00 GMT</pubDate>
         <docs>http://kmbt.github.io/rss/</docs>
         <generator>acrylamid 0.7.10</generator>
+        
+            <item>
+        <title>Safely removing SATA hard drive from a running system</title>
+        <link>http://kmbt.github.io/2015/safely-removing-sata-hard-drive-from-a-running-system/</link>
+        <description>&lt;p&gt;I have a Debian-based system with a SATA controller running in AHCI mode. I sometimes need to plug and unplug a disk from an internal SATA bay. The bay is nothing fancy - you just  slide a disk cradle into it and the SATA and power sockets make contact.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://unix.stackexchange.com/a/43450&#34;&gt;Wyzard on Unix &amp;amp; Linux Stack Exchange&lt;/a&gt; has an advice on how to do a proper hot unplug.&lt;/p&gt;
+&lt;p&gt;First you need to unmount the partitions. Then, deactivate any LVM groups with &lt;code&gt;vgchange -an&lt;/code&gt; - I don&#39;t use LVM, so I haven&#39;t tried that. Finally, it is a very good idea to unregister device from the kernel and spin it down by &lt;/p&gt;
+&lt;p&gt;&lt;code&gt;echo 1 &amp;gt; /sys/block/(device name)/device/delete&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Then I can hear the disk spin down, wait for it to stop completely and just pull it out. When I put in back in, it registers properly. Please note, that I am using AHCI mode in the controller.&lt;/p&gt;</description>
+        <pubDate>Thu, 17 Dec 2015 23:46:00 GMT</pubDate>
+        <guid isPermaLink="false">tag:kmbt.github.io,2015-12-18:/2015/safely-removing-sata-hard-drive-from-a-running-system</guid>
+    </item>
+        
+            <item>
+        <title>Identifont - an online toolkit to find and identify fonts</title>
+        <link>http://kmbt.github.io/2015/identifont-an-online-toolkit-to-find-and-identify-fonts/</link>
+        <description>&lt;p&gt;&lt;a href=&#34;http://www.identifont.com&#34;&gt;Identifont&lt;/a&gt; - an online font identification toolkit lets you identify fonts
+by such criteria as appearance traits, name, similarity and picture upload.&lt;/p&gt;
+&lt;p&gt;I find it very useful.&lt;/p&gt;</description>
+        <pubDate>Thu, 17 Dec 2015 12:39:00 GMT</pubDate>
+        <guid isPermaLink="false">tag:kmbt.github.io,2015-12-17:/2015/identifont-an-online-toolkit-to-find-and-identify-fonts</guid>
+    </item>
         
             <item>
         <title>Changing Alternatives (sensible-*) in Debian</title>

@@ -77,41 +77,6 @@
     <div class="comments"></div>
 </article>
     
-        <article>
-    <header>
-        <h1>
-            <a href="/2015/how-to-spin-down-usb-hard-drive-for-safe-removal/" rel="bookmark canonical">How to spin down USB hard drive for safe removal</a>
-        </h1>
-        <time datetime="2015-12-17">2015-12-17</time>
-    </header>
-    <p>Let's assume you are running a Debian-based system and have a hard drive at <code>/dev/sdc</code> with a partition <code>/dev/sdc1</code>
-mounted. To safely remove the hard drive, first you need to unmount all its
-partitions. In this case you may do:</p>
-<p><code>udisks --umount /dev/sdc1</code></p>
-<p>and then spin the disk down with:</p>
-<p><code>udisks --detach /dev/sdc</code></p>
-<p>You should the notice (usually, hear) the disk spin down.</p>
-<p>Please note, that we are referring here to the device <code>sdc</code> not its partition 
-<code>sdc1</code>.</p>
-<p>Thanks, <a href="http://askubuntu.com/a/190668">user76204</a>.</p>
-    <footer>
-        
-        
-            <p class="tags">tagged as
-                <a href="/tag/linux/" rel="tag">linux</a>,
-                <a href="/tag/debian/" rel="tag">debian</a>,
-                <a href="/tag/shell-fu/" rel="tag">shell-fu</a>,
-                <a href="/tag/usb/" rel="tag">usb</a>
-                    and
-                    
-                <a href="/tag/disks/" rel="tag">disks</a>
-                
-            </p>
-        
-    </footer>
-    <div class="comments"></div>
-</article>
-    
     
     
 </div>

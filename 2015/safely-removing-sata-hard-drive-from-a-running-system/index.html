@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>kmbt on code, universe and everything</title>
+  <title>Safely removing SATA hard drive from a running system</title>
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
@@ -24,6 +24,8 @@
   <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
+    <meta name="description" content="I have a Debian-based system with a SATA controlle..." />
+    <meta name="keywords" content="linux, sata, disks" />
 </head>
 <body>
   <header>
@@ -60,7 +62,9 @@
     </header>
     <p>I have a Debian-based system with a SATA controller running in AHCI mode. I sometimes need to plug and unplug a disk from an internal SATA bay. The bay is nothing fancy - you just  slide a disk cradle into it and the SATA and power sockets make contact.</p>
 <p><a href="http://unix.stackexchange.com/a/43450">Wyzard on Unix &amp; Linux Stack Exchange</a> has an advice on how to do a proper hot unplug.</p>
-<p>First you need to unmount the partitions. Then, deactivate any LVM groups with <code>vgchange -an</code> - I don't use LVM, so I haven't tried that. Finally, it is a very good idea to unregister <span>&#8230;<a href="/2015/safely-removing-sata-hard-drive-from-a-running-system/" class="continue">continue</a>.</span></p>
+<p>First you need to unmount the partitions. Then, deactivate any LVM groups with <code>vgchange -an</code> - I don't use LVM, so I haven't tried that. Finally, it is a very good idea to unregister device from the kernel and spin it down by </p>
+<p><code>echo 1 &gt; /sys/block/(device name)/device/delete</code></p>
+<p>Then I can hear the disk spin down, wait for it to stop completely and just pull it out. When I put in back in, it registers properly. Please note, that I am using AHCI mode in the controller.</p>
     <footer>
         
         
@@ -77,41 +81,10 @@
     <div class="comments"></div>
 </article>
     
-        <article>
-    <header>
-        <h1>
-            <a href="/2015/how-to-spin-down-usb-hard-drive-for-safe-removal/" rel="bookmark canonical">How to spin down USB hard drive for safe removal</a>
-        </h1>
-        <time datetime="2015-12-17">2015-12-17</time>
-    </header>
-    <p>Let's assume you are running a Debian-based system and have a hard drive at <code>/dev/sdc</code> with a partition <code>/dev/sdc1</code>
-mounted. To safely remove the hard drive, first you need to unmount all its
-partitions. In this case you may do:</p>
-<p><code>udisks --umount /dev/sdc1</code></p>
-<p>and then spin the disk down with:</p>
-<p><code>udisks --detach /dev/sdc</code></p>
-<p>You should the notice (usually, hear) the disk spin down.</p>
-<p>Please note, that we are referring here to the device <code>sdc</code> not its partition 
-<code>sdc1</code>.</p>
-<p>Thanks, <a href="http://askubuntu.com/a/190668">user76204</a>.</p>
-    <footer>
-        
-        
-            <p class="tags">tagged as
-                <a href="/tag/linux/" rel="tag">linux</a>,
-                <a href="/tag/debian/" rel="tag">debian</a>,
-                <a href="/tag/shell-fu/" rel="tag">shell-fu</a>,
-                <a href="/tag/usb/" rel="tag">usb</a>
-                    and
-                    
-                <a href="/tag/disks/" rel="tag">disks</a>
-                
-            </p>
-        
-    </footer>
-    <div class="comments"></div>
-</article>
     
+        <a href="/2015/identifont-an-online-toolkit-to-find-and-identify-fonts//" class="page floatright">
+        Identifont - an online toolkit to find and identify fonts &raquo;
+        </a>
     
     
 </div>

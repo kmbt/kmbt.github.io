@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>kmbt on code, universe and everything</title>
+  <title>Identifont - an online toolkit to find and identify fonts</title>
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
@@ -24,6 +24,8 @@
   <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
+    <meta name="description" content="[Identifont](http://www.identifont.com) - an onlin..." />
+    <meta name="keywords" content="fonts, dtp" />
 </head>
 <body>
   <header>
@@ -54,57 +56,21 @@
         <article>
     <header>
         <h1>
-            <a href="/2015/safely-removing-sata-hard-drive-from-a-running-system/" rel="bookmark canonical">Safely removing SATA hard drive from a running system</a>
-        </h1>
-        <time datetime="2015-12-18">2015-12-18</time>
-    </header>
-    <p>I have a Debian-based system with a SATA controller running in AHCI mode. I sometimes need to plug and unplug a disk from an internal SATA bay. The bay is nothing fancy - you just  slide a disk cradle into it and the SATA and power sockets make contact.</p>
-<p><a href="http://unix.stackexchange.com/a/43450">Wyzard on Unix &amp; Linux Stack Exchange</a> has an advice on how to do a proper hot unplug.</p>
-<p>First you need to unmount the partitions. Then, deactivate any LVM groups with <code>vgchange -an</code> - I don't use LVM, so I haven't tried that. Finally, it is a very good idea to unregister <span>&#8230;<a href="/2015/safely-removing-sata-hard-drive-from-a-running-system/" class="continue">continue</a>.</span></p>
-    <footer>
-        
-        
-            <p class="tags">tagged as
-                <a href="/tag/linux/" rel="tag">linux</a>,
-                <a href="/tag/sata/" rel="tag">sata</a>
-                    and
-                    
-                <a href="/tag/disks/" rel="tag">disks</a>
-                
-            </p>
-        
-    </footer>
-    <div class="comments"></div>
-</article>
-    
-        <article>
-    <header>
-        <h1>
-            <a href="/2015/how-to-spin-down-usb-hard-drive-for-safe-removal/" rel="bookmark canonical">How to spin down USB hard drive for safe removal</a>
+            <a href="/2015/identifont-an-online-toolkit-to-find-and-identify-fonts/" rel="bookmark canonical">Identifont - an online toolkit to find and identify fonts</a>
         </h1>
         <time datetime="2015-12-17">2015-12-17</time>
     </header>
-    <p>Let's assume you are running a Debian-based system and have a hard drive at <code>/dev/sdc</code> with a partition <code>/dev/sdc1</code>
-mounted. To safely remove the hard drive, first you need to unmount all its
-partitions. In this case you may do:</p>
-<p><code>udisks --umount /dev/sdc1</code></p>
-<p>and then spin the disk down with:</p>
-<p><code>udisks --detach /dev/sdc</code></p>
-<p>You should the notice (usually, hear) the disk spin down.</p>
-<p>Please note, that we are referring here to the device <code>sdc</code> not its partition 
-<code>sdc1</code>.</p>
-<p>Thanks, <a href="http://askubuntu.com/a/190668">user76204</a>.</p>
+    <p><a href="http://www.identifont.com">Identifont</a> - an online font iden&shy;ti&shy;fi&shy;ca&shy;tion toolkit lets you identify fonts
+by such criteria as appearance traits, name, similarity and picture upload.</p>
+<p>I find it very useful.</p>
     <footer>
         
         
             <p class="tags">tagged as
-                <a href="/tag/linux/" rel="tag">linux</a>,
-                <a href="/tag/debian/" rel="tag">debian</a>,
-                <a href="/tag/shell-fu/" rel="tag">shell-fu</a>,
-                <a href="/tag/usb/" rel="tag">usb</a>
+                <a href="/tag/fonts/" rel="tag">fonts</a>
                     and
                     
-                <a href="/tag/disks/" rel="tag">disks</a>
+                <a href="/tag/dtp/" rel="tag">dtp</a>
                 
             </p>
         
@@ -113,7 +79,14 @@ partitions. In this case you may do:</p>
 </article>
     
     
+        <a href="/2015/changing-alternatives-sensible-in-debian//" class="page floatright">
+        Changing Alternatives (sensible-*) in Debian &raquo;
+        </a>
     
+    
+        <a href="/2015/safely-removing-sata-hard-drive-from-a-running-system//" class="page floatleft">
+        &laquo; Safely removing SATA hard drive from a running system
+        </a>
 </div>
 
 </body>

@@ -54,6 +54,32 @@
         <article>
     <header>
         <h1>
+            <a href="/2015/safely-removing-sata-hard-drive-from-a-running-system/" rel="bookmark canonical">Safely removing SATA hard drive from a running system</a>
+        </h1>
+        <time datetime="2015-12-18">2015-12-18</time>
+    </header>
+    <p>I have a Debian-based system with a SATA controller running in AHCI mode. I sometimes need to plug and unplug a disk from an internal SATA bay. The bay is nothing fancy - you just  slide a disk cradle into it and the SATA and power sockets make contact.</p>
+<p><a href="http://unix.stackexchange.com/a/43450">Wyzard on Unix &amp; Linux Stack Exchange</a> has an advice on how to do a proper hot unplug.</p>
+<p>First you need to unmount the partitions. Then, deactivate any LVM groups with <code>vgchange -an</code> - I don't use LVM, so I haven't tried that. Finally, it is a very good idea to unregister <span>&#8230;<a href="/2015/safely-removing-sata-hard-drive-from-a-running-system/" class="continue">continue</a>.</span></p>
+    <footer>
+        
+        
+            <p class="tags">tagged as
+                <a href="/tag/linux/" rel="tag">linux</a>,
+                <a href="/tag/sata/" rel="tag">sata</a>
+                    and
+                    
+                <a href="/tag/disks/" rel="tag">disks</a>
+                
+            </p>
+        
+    </footer>
+    <div class="comments"></div>
+</article>
+    
+        <article>
+    <header>
+        <h1>
             <a href="/2015/changing-alternatives-sensible-in-debian/" rel="bookmark canonical">Changing Alternatives (sensible-*) in Debian</a>
         </h1>
         <time datetime="2015-12-17">2015-12-17</time>
