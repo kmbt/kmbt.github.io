@@ -1,193 +1,235 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://kmbt.github.io/tag/ktk/</loc>
+    <lastmod>2015-12-21</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>http://kmbt.github.io/2015/enable-iso-8061-date-format-in-thunderbird-and-the-rest-of-userland/</loc>
-    <lastmod>2015-12-16</lastmod>
+    <lastmod>2015-12-21</lastmod>
     <changefreq>never</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://kmbt.github.io/2015/remove-all-pyc-files-from-a-git-repository/</loc>
-    <lastmod>2015-12-17</lastmod>
+    <lastmod>2015-12-21</lastmod>
     <changefreq>never</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://kmbt.github.io/2015/safely-removing-sata-hard-drive-from-a-running-system/</loc>
-    <lastmod>2015-12-18</lastmod>
+    <lastmod>2015-12-21</lastmod>
     <changefreq>never</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://kmbt.github.io/tag/builtwith/</loc>
-    <lastmod>2015-12-15</lastmod>
+    <lastmod>2015-12-21</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>http://kmbt.github.io/tag/sata/</loc>
-    <lastmod>2015-12-18</lastmod>
+    <lastmod>2015-12-21</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>http://kmbt.github.io/tag/lxml/</loc>
-    <lastmod>2015-12-15</lastmod>
+    <lastmod>2015-12-21</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>http://kmbt.github.io/tag/scripts/</loc>
+    <lastmod>2015-12-21</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>http://kmbt.github.io/2015/builtwith-lookup-script/</loc>
-    <lastmod>2015-12-15</lastmod>
+    <lastmod>2015-12-21</lastmod>
     <changefreq>never</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://kmbt.github.io/tag/dtp/</loc>
-    <lastmod>2015-12-17</lastmod>
+    <lastmod>2015-12-21</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>http://kmbt.github.io/tag/locale/</loc>
-    <lastmod>2015-12-15</lastmod>
+    <lastmod>2015-12-21</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>http://kmbt.github.io/tag/html/</loc>
+    <lastmod>2015-12-21</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>http://kmbt.github.io/tag/nbsp-pl/</loc>
+    <lastmod>2015-12-21</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>http://kmbt.github.io/tag/disks/</loc>
-    <lastmod>2015-12-18</lastmod>
+    <lastmod>2015-12-21</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>http://kmbt.github.io/tag/http-redirects/</loc>
-    <lastmod>2015-12-15</lastmod>
+    <lastmod>2015-12-21</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>http://kmbt.github.io/tag/debian/</loc>
-    <lastmod>2015-12-17</lastmod>
+    <lastmod>2015-12-21</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>http://kmbt.github.io/2015/htdebug-a-script-for-tracing-http-redirects/</loc>
-    <lastmod>2015-12-15</lastmod>
+    <lastmod>2015-12-21</lastmod>
     <changefreq>never</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://kmbt.github.io/tag/web-scraping/</loc>
-    <lastmod>2015-12-15</lastmod>
+    <lastmod>2015-12-21</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>http://kmbt.github.io/page/2/</loc>
+    <lastmod>2015-12-21</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>http://kmbt.github.io/atom/</loc>
-    <lastmod>2015-12-18</lastmod>
+    <lastmod>2015-12-21</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>http://kmbt.github.io/tag/iso-date/</loc>
-    <lastmod>2015-12-15</lastmod>
+    <lastmod>2015-12-21</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>http://kmbt.github.io/2015/hello-world/</loc>
-    <lastmod>2015-12-11</lastmod>
+    <lastmod>2015-12-21</lastmod>
     <changefreq>never</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://kmbt.github.io/tag/htdebug/</loc>
-    <lastmod>2015-12-15</lastmod>
+    <lastmod>2015-12-21</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>http://kmbt.github.io/tag/wordpress/</loc>
-    <lastmod>2015-12-15</lastmod>
+    <lastmod>2015-12-21</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>http://kmbt.github.io/2015/nbsp-pl-a-tool-for-inserting-non-breaking-spaces-in-polish-texts/</loc>
+    <lastmod>2015-12-21</lastmod>
+    <changefreq>never</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>http://kmbt.github.io/tag/polish/</loc>
+    <lastmod>2015-12-21</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>http://kmbt.github.io/tag/shell-fu/</loc>
-    <lastmod>2015-12-17</lastmod>
+    <lastmod>2015-12-21</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>http://kmbt.github.io/tag/gantry/</loc>
-    <lastmod>2015-12-15</lastmod>
+    <lastmod>2015-12-21</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>http://kmbt.github.io/</loc>
-    <lastmod>2015-12-18</lastmod>
+    <lastmod>2015-12-21</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>http://kmbt.github.io/tag/python/</loc>
-    <lastmod>2015-12-16</lastmod>
+    <lastmod>2015-12-21</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>http://kmbt.github.io/2015/changing-alternatives-sensible-in-debian/</loc>
-    <lastmod>2015-12-17</lastmod>
+    <lastmod>2015-12-21</lastmod>
     <changefreq>never</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://kmbt.github.io/tag/git/</loc>
-    <lastmod>2015-12-16</lastmod>
+    <lastmod>2015-12-21</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
+    <loc>http://kmbt.github.io/2015/kmbt-s-toolkit/</loc>
+    <lastmod>2015-12-21</lastmod>
+    <changefreq>never</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
     <loc>http://kmbt.github.io/tag/linux/</loc>
-    <lastmod>2015-12-18</lastmod>
+    <lastmod>2015-12-21</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>http://kmbt.github.io/2015/how-to-spin-down-usb-hard-drive-for-safe-removal/</loc>
-    <lastmod>2015-12-17</lastmod>
+    <lastmod>2015-12-21</lastmod>
     <changefreq>never</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://kmbt.github.io/tag/fonts/</loc>
-    <lastmod>2015-12-17</lastmod>
+    <lastmod>2015-12-21</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>http://kmbt.github.io/tag/thunderbird/</loc>
-    <lastmod>2015-12-15</lastmod>
+    <lastmod>2015-12-21</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>http://kmbt.github.io/2015/hydrogen-renamer/</loc>
-    <lastmod>2015-12-15</lastmod>
+    <lastmod>2015-12-21</lastmod>
     <changefreq>never</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://kmbt.github.io/tag/usb/</loc>
-    <lastmod>2015-12-17</lastmod>
+    <lastmod>2015-12-21</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>http://kmbt.github.io/tag/php/</loc>
-    <lastmod>2015-12-15</lastmod>
+    <lastmod>2015-12-21</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>http://kmbt.github.io/2015/identifont-an-online-toolkit-to-find-and-identify-fonts/</loc>
-    <lastmod>2015-12-18</lastmod>
+    <lastmod>2015-12-21</lastmod>
     <changefreq>never</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://kmbt.github.io/articles/</loc>
-    <lastmod>2015-12-18</lastmod>
+    <lastmod>2015-12-21</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>http://kmbt.github.io/rss/</loc>
-    <lastmod>2015-12-18</lastmod>
+    <lastmod>2015-12-21</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>http://kmbt.github.io/tag/find/</loc>
-    <lastmod>2015-12-16</lastmod>
+    <lastmod>2015-12-21</lastmod>
     <changefreq>weekly</changefreq>
   </url>
 </urlset>

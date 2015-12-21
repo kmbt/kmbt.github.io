@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Enable ISO 8061 date format in Thunderbird (and the rest of userland)</title>
+  <title>kmbt on code, universe and everything</title>
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
@@ -24,8 +24,6 @@
   <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
-    <meta name="description" content="Just add the following line to your `/etc/environm..." />
-    <meta name="keywords" content="linux, debian, locale, thunderbird, iso date" />
 </head>
 <body>
   <header>
@@ -56,24 +54,47 @@
         <article>
     <header>
         <h1>
-            <a href="/2015/enable-iso-8061-date-format-in-thunderbird-and-the-rest-of-userland/" rel="bookmark canonical">Enable ISO 8061 date format in Thunderbird (and the rest of userland)</a>
+            <a href="/2015/nbsp-pl-a-tool-for-inserting-non-breaking-spaces-in-polish-texts/" rel="bookmark canonical">nbsp_pl - a tool for inserting non-breaking spaces in polish texts</a>
         </h1>
-        <time datetime="2015-12-15">2015-12-15</time>
+        <time datetime="2015-12-21">2015-12-21</time>
     </header>
-    <p>Just add the following line to your <code>/etc/environment</code>:</p>
-<p><code>LC_TIME=en_DK.utf8</code></p>
-<p>DK? <a href="https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=137870">Yes</a>.</p>
+    <p>In polish typography there is a rule that tells you to insert a non-breaking space after one-letter words such as "a", "i", "o", "u", "w", "z". It is also not uncommon to insert non-breaking spaces after numbers or between digits if the digits are to be separated by a space. I have written a script to do just that, and a little more.</p>
+<p>It is called <code>nbsp_pl</code>, and you can find it the <a href="https://github.com/kmbt/ktk">ktk</a>.</p>
+<p>The script accepts input file names as parameters. In case of no file names given, it just reads from standard input until EOF. On standard output it writes <span>&#8230;<a href="/2015/nbsp-pl-a-tool-for-inserting-non-breaking-spaces-in-polish-texts/" class="continue">continue</a>.</span></p>
     <footer>
         
         
             <p class="tags">tagged as
-                <a href="/tag/linux/" rel="tag">linux</a>,
-                <a href="/tag/debian/" rel="tag">debian</a>,
-                <a href="/tag/locale/" rel="tag">locale</a>,
-                <a href="/tag/thunderbird/" rel="tag">thunderbird</a>
+                <a href="/tag/ktk/" rel="tag">ktk</a>,
+                <a href="/tag/scripts/" rel="tag">scripts</a>,
+                <a href="/tag/polish/" rel="tag">polish</a>,
+                <a href="/tag/nbsp-pl/" rel="tag">nbsp_pl</a>
                     and
                     
-                <a href="/tag/iso-date/" rel="tag">iso date</a>
+                <a href="/tag/html/" rel="tag">html</a>
+                
+            </p>
+        
+    </footer>
+    <div class="comments"></div>
+</article>
+    
+        <article>
+    <header>
+        <h1>
+            <a href="/2015/kmbt-s-toolkit/" rel="bookmark canonical">Kmbt's toolkit</a>
+        </h1>
+        <time datetime="2015-12-21">2015-12-21</time>
+    </header>
+    <p>I've created a repository of various scripts I find useful in more or less everyday situations. I have called it ktk, which stands for "kmbt's toolkit". It is available at <a href="https://github.com/kmbt/ktk">github</a> and currently contains test version of a script called <code>nbsp_pl</code> which I am going to describe in the next post.</p>
+    <footer>
+        
+        
+            <p class="tags">tagged as
+                <a href="/tag/ktk/" rel="tag">ktk</a>
+                    and
+                    
+                <a href="/tag/scripts/" rel="tag">scripts</a>
                 
             </p>
         
@@ -82,14 +103,7 @@
 </article>
     
     
-        <a href="/2015/htdebug-a-script-for-tracing-http-redirects//" class="page floatright">
-        htdebug, a script for tracing HTTP redirects &raquo;
-        </a>
     
-    
-        <a href="/2015/remove-all-pyc-files-from-a-git-repository//" class="page floatleft">
-        &laquo; Remove all .pyc files from a git repository
-        </a>
 </div>
 
 </body>

@@ -54,6 +54,57 @@
         <article>
     <header>
         <h1>
+            <a href="/2015/nbsp-pl-a-tool-for-inserting-non-breaking-spaces-in-polish-texts/" rel="bookmark canonical">nbsp_pl - a tool for inserting non-breaking spaces in polish texts</a>
+        </h1>
+        <time datetime="2015-12-21">2015-12-21</time>
+    </header>
+    <p>In polish typography there is a rule that tells you to insert a non-breaking space after one-letter words such as "a", "i", "o", "u", "w", "z". It is also not uncommon to insert non-breaking spaces after numbers or between digits if the digits are to be separated by a space. I have written a script to do just that, and a little more.</p>
+<p>It is called <code>nbsp_pl</code>, and you can find it the <a href="https://github.com/kmbt/ktk">ktk</a>.</p>
+<p>The script accepts input file names as parameters. In case of no file names given, it just reads from standard input until EOF. On standard output it writes <span>&#8230;<a href="/2015/nbsp-pl-a-tool-for-inserting-non-breaking-spaces-in-polish-texts/" class="continue">continue</a>.</span></p>
+    <footer>
+        
+        
+            <p class="tags">tagged as
+                <a href="/tag/ktk/" rel="tag">ktk</a>,
+                <a href="/tag/scripts/" rel="tag">scripts</a>,
+                <a href="/tag/polish/" rel="tag">polish</a>,
+                <a href="/tag/nbsp-pl/" rel="tag">nbsp_pl</a>
+                    and
+                    
+                <a href="/tag/html/" rel="tag">html</a>
+                
+            </p>
+        
+    </footer>
+    <div class="comments"></div>
+</article>
+    
+        <article>
+    <header>
+        <h1>
+            <a href="/2015/kmbt-s-toolkit/" rel="bookmark canonical">Kmbt's toolkit</a>
+        </h1>
+        <time datetime="2015-12-21">2015-12-21</time>
+    </header>
+    <p>I've created a repository of various scripts I find useful in more or less everyday situations. I have called it ktk, which stands for "kmbt's toolkit". It is available at <a href="https://github.com/kmbt/ktk">github</a> and currently contains test version of a script called <code>nbsp_pl</code> which I am going to describe in the next post.</p>
+    <footer>
+        
+        
+            <p class="tags">tagged as
+                <a href="/tag/ktk/" rel="tag">ktk</a>
+                    and
+                    
+                <a href="/tag/scripts/" rel="tag">scripts</a>
+                
+            </p>
+        
+    </footer>
+    <div class="comments"></div>
+</article>
+    
+        <article>
+    <header>
+        <h1>
             <a href="/2015/safely-removing-sata-hard-drive-from-a-running-system/" rel="bookmark canonical">Safely removing SATA hard drive from a running system</a>
         </h1>
         <time datetime="2015-12-18">2015-12-18</time>
@@ -233,74 +284,6 @@ ignored.</p>
         <article>
     <header>
         <h1>
-            <a href="/2015/builtwith-lookup-script/" rel="bookmark canonical">BuiltWith lookup script</a>
-        </h1>
-        <time datetime="2015-12-11">2015-12-11</time>
-    </header>
-    <p><a href="http://builtwith.com">BuiltWith</a> is a web service that lets you check what web tech&shy;nolo&shy;gies are used on a given website. This simple script lets you do that directly from command line.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23</pre></div></td><td class="code"><div class="highlight"><pre><span class="c">#!/usr/bin/env python</span>
-
-<span class="kn">import</span> <span class="nn">urlparse</span>
-<span class="kn">import</span> <span class="nn">sys</span>
-<span class="kn">import</span> <span class="nn">requests</span>
-
-<span class="kn">import</span> <span class="nn">lxml</span>
-<span class="kn">from</span> <span class="nn">lxml</span> <span class="kn">import</span> <span class="n">etree</span>
-<span class="kn">from</span> <span class="nn">cStringIO</span> <span class="kn">import</span> <span class="n">StringIO</span>
-
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="n">domain</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-    <span class="n">base_url</span> <span class="o">=</span> <span class="s">&quot;http://builtwith.com/&quot;</span>
-    <span class="n">url</span> <span class="o">=</span> <span class="n">urlparse</span><span class="o">.</span><span class="n">urljoin</span><span class="p">(</span><span class="n">base_url</span><span class="p">,</span> <span class="n">domain</span><span class="p">)</span>
-    <span class="k">print</span> <span class="s">&quot;Visiting {} ...</span><span class="se">\n</span><span class="s">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-
-    <span class="n">parser</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">HTMLParser</span><span class="p">()</span>
-    <span class="n">tree</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">StringIO</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">),</span> <span class="n">parser</span><span class="p">)</span>
-
-    </pre><span>&#8230;<a href="/2015/builtwith-lookup-script/" class="continue">continue</a>.</span></div></td></tr></table>
-    <footer>
-        
-        
-            <p class="tags">tagged as
-                <a href="/tag/builtwith/" rel="tag">builtwith</a>,
-                <a href="/tag/python/" rel="tag">python</a>,
-                <a href="/tag/lxml/" rel="tag">lxml</a>
-                    and
-                    
-                <a href="/tag/web-scraping/" rel="tag">web scraping</a>
-                
-            </p>
-        
-    </footer>
-    <div class="comments"></div>
-</article>
-    
-        <article>
-    <header>
-        <h1>
             <a href="/2015/htdebug-a-script-for-tracing-http-redirects/" rel="bookmark canonical">htdebug, a script for tracing HTTP redirects</a>
         </h1>
         <time datetime="2015-12-11">2015-12-11</time>
@@ -374,23 +357,64 @@ along with in&shy;for&shy;ma&shy;tion on rel=canonical links. I called it htdebu
         <article>
     <header>
         <h1>
-            <a href="/2015/hydrogen-renamer/" rel="bookmark canonical">Hydrogen Renamer</a>
+            <a href="/2015/builtwith-lookup-script/" rel="bookmark canonical">BuiltWith lookup script</a>
         </h1>
-        <time datetime="2015-11-22">2015-11-22</time>
+        <time datetime="2015-12-11">2015-12-11</time>
     </header>
-    <p>TL;DR: This <a href="https://github.com/kmbt/hydrogen-renamer">script</a> will help you rename the Gantry 5 Hydrogen theme as a starting point for further cus&shy;tomiza&shy;tions.</p>
-<p>Recently, I've been trying out the <a href="http://gantry.org">Gantry 5</a> - a theme framework for Wordpress. One way to get started with theme de&shy;vel&shy;op&shy;ment using Gantry 5 is to take the default theme, called Hydrogen, rename it and customize it to one's needs.</p>
-<p>The whole renaming process is described <a href="http://docs.gantry.org/gantry5/theme-development/change-theme-name">here</a>. It takes few steps, which involve unzipping the theme, changing names of files and di&shy;rec&shy;to&shy;ries and doing a <em>find and replace</em> for the word "hydrogen" written in few com&shy;bi&shy;na&shy;tions of uppercase and lowercase letters. </p>
-<p>I <span>&#8230;<a href="/2015/hydrogen-renamer/" class="continue">continue</a>.</span></p>
+    <p><a href="http://builtwith.com">BuiltWith</a> is a web service that lets you check what web tech&shy;nolo&shy;gies are used on a given website. This simple script lets you do that directly from command line.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23</pre></div></td><td class="code"><div class="highlight"><pre><span class="c">#!/usr/bin/env python</span>
+
+<span class="kn">import</span> <span class="nn">urlparse</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="kn">import</span> <span class="nn">lxml</span>
+<span class="kn">from</span> <span class="nn">lxml</span> <span class="kn">import</span> <span class="n">etree</span>
+<span class="kn">from</span> <span class="nn">cStringIO</span> <span class="kn">import</span> <span class="n">StringIO</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">domain</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">base_url</span> <span class="o">=</span> <span class="s">&quot;http://builtwith.com/&quot;</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="n">urlparse</span><span class="o">.</span><span class="n">urljoin</span><span class="p">(</span><span class="n">base_url</span><span class="p">,</span> <span class="n">domain</span><span class="p">)</span>
+    <span class="k">print</span> <span class="s">&quot;Visiting {} ...</span><span class="se">\n</span><span class="s">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">HTMLParser</span><span class="p">()</span>
+    <span class="n">tree</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">StringIO</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">),</span> <span class="n">parser</span><span class="p">)</span>
+
+    </pre><span>&#8230;<a href="/2015/builtwith-lookup-script/" class="continue">continue</a>.</span></div></td></tr></table>
     <footer>
         
         
             <p class="tags">tagged as
-                <a href="/tag/gantry/" rel="tag">gantry</a>,
-                <a href="/tag/wordpress/" rel="tag">wordpress</a>
+                <a href="/tag/builtwith/" rel="tag">builtwith</a>,
+                <a href="/tag/python/" rel="tag">python</a>,
+                <a href="/tag/lxml/" rel="tag">lxml</a>
                     and
                     
-                <a href="/tag/php/" rel="tag">php</a>
+                <a href="/tag/web-scraping/" rel="tag">web scraping</a>
                 
             </p>
         
@@ -398,24 +422,10 @@ along with in&shy;for&shy;ma&shy;tion on rel=canonical links. I called it htdebu
     <div class="comments"></div>
 </article>
     
-        <article>
-    <header>
-        <h1>
-            <a href="/2015/hello-world/" rel="bookmark canonical">Hello World!</a>
-        </h1>
-        <time datetime="2015-11-21">2015-11-21</time>
-    </header>
-    <p>This is my first post on this website. It is also the first time I am using the <a href="http://blog.getpelican.com">pelican</a> static site generation engine. It is quite surprising for me to find out how the static site generation has recently gained much popularity - as I understand, mainly due to the increasing avail&shy;abil&shy;i&shy;ty of high per&shy;for&shy;mance content delivery networks, and also due to concerns about the security of dynamic websites. </p>
-<p>What I am going to do with this website is to try to share some of my little dis&shy;cov&shy;er&shy;ies and solutions to some common problems in the areas of my personal <span>&#8230;<a href="/2015/hello-world/" class="continue">continue</a>.</span></p>
-    <footer>
-        
-        
-            <p class="tags">untagged</p>
-        
-    </footer>
-    <div class="comments"></div>
-</article>
     
+        <a href="/page/2//" class="page floatright">
+        Previous &raquo;
+        </a>
     
     
 </div>
