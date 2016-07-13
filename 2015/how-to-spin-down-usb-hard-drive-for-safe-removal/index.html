@@ -4,7 +4,8 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Identifont - an online tools to find fonts similar in appearance</title>
+  <title>How to spin down USB hard drive for safe removal</title>
+  <link rel="canonical" href="http://kmbt.pl/how-to-spin-down-usb-hard-drive-for-safe-removal/" />
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
@@ -24,8 +25,8 @@
   <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
-    <meta name="description" content="..." />
-    <meta name="keywords" content="" />
+    <meta name="description" content="Let&#39;s assume you are running a Debian-based system..." />
+    <meta name="keywords" content="linux, debian, shell-fu, usb, disks" />
 </head>
 <body>
   <header>
@@ -56,26 +57,47 @@
         <article>
     <header>
         <h1>
-            <a href="/2015/identifont-an-online-tools-to-find-fonts-similar-in-appearance/" rel="bookmark canonical">Identifont - an online tools to find fonts similar in appearance</a>
+            <a href="/2015/how-to-spin-down-usb-hard-drive-for-safe-removal/" rel="bookmark canonical">How to spin down USB hard drive for safe removal</a>
         </h1>
         <time datetime="2015-12-17">2015-12-17</time>
     </header>
-    
+    <p>Let's assume you are running a Debian-based system and have a hard drive at <code>/dev/sdc</code> with a partition <code>/dev/sdc1</code>
+mounted. To safely remove the hard drive, first you need to unmount all its
+partitions. In this case you may do:</p>
+<p><code>udisks --umount /dev/sdc1</code></p>
+<p>and then spin the disk down with:</p>
+<p><code>udisks --detach /dev/sdc</code></p>
+<p>You should the notice (usually, hear) the disk spin down.</p>
+<p>Please note, that we are referring here to the device <code>sdc</code> not its partition 
+<code>sdc1</code>.</p>
+<p>Thanks, <a href="http://askubuntu.com/a/190668">user76204</a>.</p>
     <footer>
         
         
-            <p class="tags">untagged</p>
+            <p class="tags">tagged as
+                <a href="/tag/linux/" rel="tag">linux</a>,
+                <a href="/tag/debian/" rel="tag">debian</a>,
+                <a href="/tag/shell-fu/" rel="tag">shell-fu</a>,
+                <a href="/tag/usb/" rel="tag">usb</a>
+                    and
+                    
+                <a href="/tag/disks/" rel="tag">disks</a>
+                
+            </p>
         
     </footer>
     <div class="comments"></div>
 </article>
     
     
-        <a href="/2015/changing-alternatives-sensible-in-debian//" class="page floatright">
-        Changing Alternatives (sensible-*) in Debian &raquo;
+        <a href="/2015/remove-all-pyc-files-from-a-git-repository//" class="page floatright">
+        Remove all .pyc files from a git repository &raquo;
         </a>
     
     
+        <a href="/2015/changing-alternatives-sensible-in-debian//" class="page floatleft">
+        &laquo; Changing Alternatives (sensible-*) in Debian
+        </a>
 </div>
 
 </body>

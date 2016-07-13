@@ -4,7 +4,8 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Kmbt's toolkit</title>
+  <title>nbsp_pl - a tool for inserting non-breaking spaces in polish texts</title>
+  <link rel="canonical" href="http://kmbt.pl/kmbts-toolkit/" />
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
@@ -24,8 +25,8 @@
   <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
-    <meta name="description" content="I&#39;ve created a repository of various scripts I fin..." />
-    <meta name="keywords" content="ktk, scripts" />
+    <meta name="description" content="In polish typography there is a rule that tells yo..." />
+    <meta name="keywords" content="ktk, scripts, polish, nbsp_pl, html" />
 </head>
 <body>
   <header>
@@ -56,19 +57,30 @@
         <article>
     <header>
         <h1>
-            <a href="/2015/kmbt-s-toolkit/" rel="bookmark canonical">Kmbt's toolkit</a>
+            <a href="/2015/nbsp-pl-a-tool-for-inserting-non-breaking-spaces-in-polish-texts/" rel="bookmark canonical">nbsp_pl - a tool for inserting non-breaking spaces in polish texts</a>
         </h1>
         <time datetime="2015-12-21">2015-12-21</time>
     </header>
-    <p>I've created a repository of various scripts I find useful in more or less everyday situations. I have called it ktk, which stands for "kmbt's toolkit". It is available at <a href="https://github.com/kmbt/ktk">github</a> and currently contains test version of a script called <code>nbsp_pl</code> which I am going to describe in the next post.</p>
+    <p>In polish typography there is a rule that tells you to insert a non-breaking space after one-letter words such as "a", "i", "o", "u", "w", "z". It is also not uncommon to insert non-breaking spaces after numbers or between digits if the digits are to be separated by a space. I have written a script to do just that, and a little more.</p>
+<p>It is called <code>nbsp_pl</code>, and you can find it the <a href="https://github.com/kmbt/ktk">ktk</a>.</p>
+<p>The script accepts input file names as parameters. In case of no file names given, it just reads from standard input until EOF. On standard output it writes result of processing which takes place in the following stages:</p>
+<ol>
+<li>Removal of repeated spaces</li>
+<li>Adding non-breaking spaces after words belonging to a hard-coded list</li>
+<li>Adding non-breaking spaces after numbers</li>
+</ol>
+<p>The scripts works properly only in utf-8 encoding. As a symbol for a non-breaking space it inserts an HTML entity of <code>&amp;nbsp;</code>.</p>
     <footer>
         
         
             <p class="tags">tagged as
-                <a href="/tag/ktk/" rel="tag">ktk</a>
+                <a href="/tag/ktk/" rel="tag">ktk</a>,
+                <a href="/tag/scripts/" rel="tag">scripts</a>,
+                <a href="/tag/polish/" rel="tag">polish</a>,
+                <a href="/tag/nbsp-pl/" rel="tag">nbsp_pl</a>
                     and
                     
-                <a href="/tag/scripts/" rel="tag">scripts</a>
+                <a href="/tag/html/" rel="tag">html</a>
                 
             </p>
         
@@ -77,14 +89,11 @@
 </article>
     
     
-        <a href="/2015/safely-removing-sata-hard-drive-from-a-running-system//" class="page floatright">
-        Safely removing SATA hard drive from a running system &raquo;
+        <a href="/2015/kmbt-s-toolkit//" class="page floatright">
+        Kmbt's toolkit &raquo;
         </a>
     
     
-        <a href="/2015/nbsp-pl-a-tool-for-inserting-non-breaking-spaces-in-polish-texts//" class="page floatleft">
-        &laquo; nbsp_pl - a tool for inserting non-breaking spaces in polish texts
-        </a>
 </div>
 
 </body>
